@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f2ff">
+  <meta name="description" content="小白大王陪你选奶茶。点击开始滚动，随时停止，今天喝什么就交给它。">
+  <title>小白大王的奶茶 time · 今天喝什么？</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="wordmark" href="./" aria-label="奶茶时间首页"><span class="cup-icon">◡</span> 奶茶时间</a><button class="share-button" id="share">分享给朋友 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7"/></svg></button></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="bear-stage" id="bearStage"><span class="note n1" aria-hidden="true">♪</span><span class="note n2" aria-hidden="true">♫</span><img class="bear" src="bear.png" alt="戴紫色蝴蝶结的小白大王" width="190" height="174"><span class="bear-shadow" aria-hidden="true"></span></div>
+      <p class="eyebrow">TAKE A LITTLE TEA BREAK</p>
+      <h1 id="title">下午奶茶 <span>time!</span></h1>
+      <p class="intro">今天喝什么？让小白大王帮你选。</p>
+    </section>
+    <div class="workspace">
+      <aside class="menu-card">
+        <div class="menu-heading"><h2>今天的候选</h2><span class="count" id="count"></span></div>
+        <p class="menu-description">每一杯，都有被选中的机会。</p>
+        <div class="brands" id="brands" aria-label="奶茶候选名单"></div>
+        <button class="edit-button" id="edit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5M4 20l5-1L20 8l-5-5L4 14v6Z"/></svg> 自定义名单</button>
+      </aside>
+      <section class="picker-card" aria-label="奶茶抽选器">
+        <div class="picker-top"><span>你的下午茶签</span><span class="tiny-flower" aria-hidden="true">✳</span></div>
+        <div class="reel" id="reel"><p class="reel-label" id="reelLabel">一点小期待</p><div class="result" id="result">今天喝什么？</div><p class="reel-caption" id="caption">按下开始，把选择交给好运气</p><span class="spark s1" aria-hidden="true">✧</span><span class="spark s2" aria-hidden="true">✧</span></div>
+        <div class="controls"><button id="start" class="start"><span aria-hidden="true">▶</span> <span id="startText">开始滚动</span></button><button id="stop" class="stop" disabled><span class="stop-icon" aria-hidden="true"></span> 停止滚动</button></div>
+        <p class="keyboard-hint">点击开始，再点停止，就决定是这一杯。<span>电脑上也可以按空格键</span></p>
+      </section>
+    </div>
+    <p class="bottom-note">生活需要一点甜，下午茶也是。</p>
+  </main>
+  <footer>选一杯喜欢的，歇一小会儿。<span>名单保存在当前浏览器；分享链接会带上当前名单。</span></footer>
+  <dialog id="editor" aria-labelledby="editorTitle"><form id="listForm"><div class="dialog-heading"><h2 id="editorTitle">我的奶茶名单</h2><button type="button" id="closeEditor" class="close" aria-label="关闭">×</button></div><label for="listInput">每行一个选项，可以填品牌，也可以填具体饮品。</label><textarea id="listInput" rows="11" spellcheck="false" maxlength="5000"></textarea><p class="input-note" id="inputNote">最多 100 项，每项最多 40 个字；空行和重复项会自动去掉。</p><div class="dialog-actions"><button type="button" id="reset" class="reset">恢复默认</button><button type="submit" class="save">保存名单</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="sr-only" id="announcement" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
