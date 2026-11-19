@@ -1,5 +1,5 @@
 'use strict';
-const DEFAULTS=['蜜雪冰城','1点点','霸王茶姬','沪上阿姨','茶百道','喜茶','奈雪的茶','茉莉奶白','甜啦啦','库迪咖啡','瑞幸咖啡','星巴克','开水','不喝'];
+const DEFAULTS=['蜜雪冰城','1点点','霸王茶姬','沪上阿姨','茶百道','喜茶','奈雪的茶','茉莉奶白','甜啦啦','库迪咖啡','瑞幸咖啡','开水','不喝'];
 const STORAGE_KEY='tea-time-list-harbin-v1';
 const $=id=>document.getElementById(id);
 const state={items:[...DEFAULTS],running:false,timer:null,current:null};
